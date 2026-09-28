@@ -38,6 +38,199 @@
     #container.show {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
+  /* ================= 深色主题 · 绯红×冰青 ================= */
+    /* 色板来源：角色插画提取
+       绯红主色 #C3152A / 深蓝黑底 #12171D / 冰青高光 #B6D0D5 / 暖白文字 #F9DBDA */
+    :root {
+      --bg:        #12171D;   /* 主背景（深蓝黑，取自画面暗部） */
+      --panel:     #1C2127;   /* 卡片背景 */
+      --panel-2:   #232A32;   /* 次级卡片 */
+      --line:      #2A3038;   /* 边框 */
+      --text:      #F9DBDA;   /* 正文（暖白，取自衬衫） */
+      --text-dim:  #9E9BA5;   /* 次要文字（冷灰） */
+      --accent:    #C3152A;   /* 主色：绯红 */
+      --accent-hi: #E23E52;   /* 悬停提亮 */
+      --cyan:      #B6D0D5;   /* 强调：冰青（呼应光环） */
+    }
+
+    /* --- 1. 基础底色 --- */
+    body,
+    .body-wrap {
+      background: var(--bg) !important;
+      color: var(--text) !important;
+    }
+    .left-col {
+      background: var(--bg) !important;
+    }
+    .article,
+    .archives-wrap,
+    .archive-article-inner {
+      background: var(--panel) !important;
+      border-color: var(--line) !important;
+    }
+
+    /* --- 2. 标题与正文 --- */
+    .article-title,
+    .article-title a,
+    .archive-article-title,
+    .archive-article-title a,
+    .article-entry h1, .article-entry h2, .article-entry h3,
+    .article-entry h4, .article-entry h5, .article-entry h6 {
+      color: var(--text) !important;
+    }
+    .article-title a:hover,
+    .archive-article-title a:hover {
+      color: var(--accent-hi) !important;
+    }
+    .article-entry,
+    .article-entry p,
+    .article-entry li {
+      color: var(--text) !important;
+    }
+    .article-entry strong { color: #fff !important; }
+
+    /* --- 3. 次要文字（日期、元信息） --- */
+    .article-meta,
+    .article-date,
+    .archive-article-date,
+    .article-info,
+    .article-info a,
+    .article-more-a,
+    .article-tag-list a,
+    .article-category a {
+      color: var(--text-dim) !important;
+    }
+    .article-more-a:hover,
+    .article-tag-list a:hover {
+      color: var(--accent-hi) !important;
+    }
+
+    /* --- 4. 链接：用冰青，呼应光环 --- */
+    .article-entry a {
+      color: var(--cyan) !important;
+      border-bottom: 1px solid rgba(182, 208, 213, .3);
+    }
+    .article-entry a:hover {
+      color: #fff !important;
+      border-bottom-color: var(--accent);
+    }
+
+    /* --- 5. 引用块 / 分割线 / 表格 --- */
+    .article-entry blockquote {
+      background: var(--panel-2) !important;
+      border-left: 4px solid var(--accent) !important;
+      color: var(--text-dim) !important;
+    }
+    .article-entry hr,
+    .article-entry table th,
+    .article-entry table td {
+      border-color: var(--line) !important;
+    }
+    .article-entry table tr:nth-child(2n) {
+      background: var(--panel-2) !important;
+    }
+
+    /* --- 6. 行内代码（暗红底 + 绯红字，避免深底下出现白斑） --- */
+    .article-entry code {
+      background: #2A1A1E !important;
+      color: var(--accent-hi) !important;
+      border: 1px solid #3A2228;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* --- 7. 代码块：深底 + Monokai 配色（原配色正好适配） --- */
+    .article-entry pre,
+    .article-entry .highlight {
+      background: #16181D !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    /* --- 8. 分页：绯红 --- */
+    #page-nav .page-number {
+      background: var(--panel-2) !important;
+      color: var(--text-dim) !important;
+    }
+    #page-nav .page-number:hover {
+      background: var(--accent-hi) !important;
+      color: #fff !important;
+    }
+    #page-nav .current,
+    #page-nav .current:hover {
+      background: var(--accent) !important;
+      color: #fff !important;
+    }
+    #page-nav .extend {
+      color: var(--text-dim) !important;
+    }
+    #page-nav .extend:hover {
+      color: var(--accent-hi) !important;
+    }
+
+    /* --- 9. 打赏按钮：绯红（不再是主题默认的 #f44336 红） --- */
+    .page-reward .page-reward-btn {
+      background: var(--accent) !important;
+      box-shadow: 0 2px 10px rgba(195, 21, 42, .45) !important;
+    }
+
+    /* --- 10. 侧边栏文字 --- */
+    .header-author a,
+    .header-menu a {
+      color: #fff !important;
+    }
+    .header-menu a:hover {
+      color: var(--cyan) !important;
+    }
+    .header-subtitle {
+      color: rgba(249, 219, 218, .75) !important;
+    }
+    .header-smart-menu a {
+      color: var(--text-dim) !important;
+    }
+    .header-smart-menu a:hover {
+      color: var(--cyan) !important;
+    }
+
+    /* --- 11. 版权声明 / 归档页 --- */
+    .declare,
+    .post-copyright {
+      background: var(--panel-2) !important;
+      color: var(--text-dim) !important;
+      border-color: var(--line) !important;
+    }
+    .archive-year-wrap a,
+    .archive-year {
+      color: var(--text) !important;
+    }
+
+    /* --- 12. 右滑面板 --- */
+    .tools-col,
+    .tools-col .tools-section {
+      background: var(--panel) !important;
+      color: var(--text) !important;
+    }
+    .tools-col .tools-section .search-ul .search-title {
+      color: var(--text) !important;
+    }
+    .tools-col .tools-section .search-ul .search-time span,
+    .tools-col .tools-section .search-ul .search-tag span {
+      color: var(--text-dim) !important;
+    }
+
+    /* --- 13. 可选：人物感强化（不想要就把这两条规则删掉） --- */
+    /* 头像外圈冰青光环，呼应插画里的 halo */
+    .profilepic {
+      box-shadow: 0 0 0 2px rgba(182, 208, 213, .55),
+                  0 0 18px rgba(182, 208, 213, .35) !important;
+    }
+    /* 文章标题左侧绯红竖条 */
+    .article-title {
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
+    /* ============== 深色主题结束 ============== */
   </style>
   
 
