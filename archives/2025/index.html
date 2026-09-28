@@ -255,6 +255,51 @@
     }
     #footer { text-shadow: none !important; }
     /* ===== 白边修复结束 ===== */
+    /* ===== 深色主题补漏：右侧容器 + 残留浅色 ===== */
+    .mid-col,
+    .mid-col.show {
+      background: var(--bg) !important;
+    }
+    .mid-col.show .article {
+      background: var(--panel) !important;
+    }
+    #container,
+    #container.show {
+      background: var(--bg) !important;
+    }
+    .archives-wrap {
+      background: var(--panel) !important;
+      border-bottom-color: var(--line) !important;
+    }
+    .archives .archive-article {
+      border-top-color: var(--line) !important;
+      border-bottom-color: var(--line) !important;
+    }
+    .article-entry h2, .article-entry h3,
+    .article-entry h4, .article-entry h5,
+    .article-entry h6 {
+      border-bottom-color: var(--line) !important;
+    }
+    .article-header { border-bottom-color: var(--line) !important; }
+    .article-info-index.article-info { border-top-color: var(--line) !important; }
+    .article-inner { border-color: var(--line) !important; }
+    .article-entry li code,
+    .article-entry p code,
+    .article-entry code {
+      background: #2A1A1E !important;
+      border-color: #3A2228 !important;
+      color: var(--accent-hi) !important;
+    }
+    .article-entry blockquote {
+      background: var(--panel-2) !important;
+      border-left-color: var(--accent) !important;
+      color: var(--text-dim) !important;
+    }
+    .toc-container.tooltip-left,
+    .mod-side-operation__jump-to-top .icon-back {
+      background: #3A424C !important;
+    }
+    /* ===== 补漏结束 ===== */
   </style>
   
 
