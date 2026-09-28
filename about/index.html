@@ -229,6 +229,34 @@
       padding-left: 12px;
     }
     /* ============== 深色主题结束 ============== */
+    /* ===== 白边修复：必须用 border-top/bottom-color 长写属性 ===== */
+    .article {
+      border-top-color: var(--line) !important;
+      border-bottom-color: var(--line) !important;
+      border-left-color: var(--line) !important;
+      border-right-color: var(--line) !important;
+    }
+    .archives .archive-article {
+      border-top-color: var(--line) !important;
+      border-bottom-color: var(--line) !important;
+    }
+    .archives-wrap { border-bottom-color: var(--line) !important; }
+    .article-entry hr {
+      border-top-color: var(--line) !important;
+      border-bottom-color: transparent !important;
+    }
+    .share-icons a { border-color: #3A424C !important; }
+    .article-entry table,
+    .article-entry table td,
+    .article-entry table th { border-color: var(--line) !important; }
+    .article-entry table thead tr { background: var(--panel-2) !important; }
+    .declare {
+      background-color: var(--panel-2) !important;
+      border-left-color: var(--accent) !important;
+      color: var(--text-dim) !important;
+    }
+    #footer { text-shadow: none !important; }
+    /* ===== 白边修复结束 ===== */
   </style>
   
 
